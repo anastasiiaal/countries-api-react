@@ -1,0 +1,12 @@
+.country-page {
+    padding: 80px 0;
+
+    .btn-back {
+        max-width: max-content;
+        padding: 9px 38px 9px 32px;
+        box-shadow: $shadow-plus;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: $header;
+    }
+}

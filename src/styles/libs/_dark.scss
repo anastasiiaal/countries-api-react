@@ -1,0 +1,19 @@
+main.dark {
+    background-color: $d-bg;
+
+    * {
+        color: $d-text;
+    }
+
+    header {
+        background-color: $d-header;
+    }
+
+    .country-page {
+        background-color: $d-bg;
+        .btn-back {
+            background-color: $d-header;
+        }
+    } 
+
+} 

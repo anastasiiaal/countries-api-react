@@ -1,1 +1,116 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+:root {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* __________ reset css __________ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/*  __________ end reset css __________ */
+/* normal mode */
+/* dark mode */
+/* shadow */
+* {
+  color: #111416;
+}
+
+main {
+  background-color: #FAFAFA;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+main.dark {
+  background-color: #212E37;
+}
+main.dark * {
+  color: #FFFFFF;
+}
+main.dark header {
+  background-color: #2B3743;
+}
+main.dark .country-page {
+  background-color: #212E37;
+}
+main.dark .country-page .btn-back {
+  background-color: #2B3743;
+}
+
+header {
+  padding: 24px 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a.logo {
+  font-weight: 800;
+  font-size: 24px;
+}
+header .darkmode-toggler {
+  cursor: pointer;
+}
+header .darkmode-toggler p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.country-page {
+  padding: 80px 0;
+}
+.country-page .btn-back {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding: 9px 38px 9px 32px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+/*  media queries */
+/*1440-1290*/
+@media screen and (max-width: 1290px) {
+  .container {
+    width: 90%;
+  }
+}
+/*1290-1100*/
+/*1100-992*/
+/*991-450*/
+/* < 320*//*# sourceMappingURL=main.css.map */

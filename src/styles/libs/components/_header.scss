@@ -1,0 +1,27 @@
+header {
+    padding: 24px 0;
+    background-color: $header;
+    box-shadow: $shadow;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a.logo {
+        font-weight: 800;
+        font-size: 24px;
+    }
+
+    .darkmode-toggler {
+        cursor: pointer;
+        p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+
