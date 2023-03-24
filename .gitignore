@@ -38,3 +38,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# get rid of compiled css & dart-sass
+dart-sass
+*.css
+*.css.map
