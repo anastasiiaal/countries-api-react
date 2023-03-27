@@ -34,12 +34,16 @@
 
         .country__flag {
             width: 70%;
-            
         }
 
         .country__info {
             width: 100%;
         }
+    }
+
+    .countrycard {
+        width: 30%;
+        margin-bottom: 20px;
     }
 }
 
@@ -54,6 +58,7 @@
             font-size: 14px;
         }
     } 
+
     .country-page {
         padding: 40px 0;
 
@@ -76,12 +81,38 @@
             }
         }
     }
+
+    .catalogue {
+        .input-wrap {
+            width: 100%;
+        }
+
+        input.country-search {
+            width: 100%;
+        }
+
+        .nav {
+            flex-direction: column;
+            align-items: start;
+            gap: 38px;
+        }
+    } 
+
+    .countrycard {
+        width: 46%;
+    }
 }
 
-/*991-450*/
-// @media screen and (max-width: 450px) {
-
-// }
+/*700-600*/
+@media screen and (max-width: 600px) {
+    .countrycards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .countrycard {
+        width: 80%;
+    }
+}
 
 /* < 320*/
 // @media screen and (max-width: 319px) {

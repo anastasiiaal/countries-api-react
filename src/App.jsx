@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from './components/Header'
+import Catalogue from './components/Catalogue'
 import CountryPage from './components/CountryPage'
 
 export default function App() {
@@ -13,8 +14,9 @@ export default function App() {
 
   return (
     <main className={darkMode ? "dark" : ""}>
-      <Header clickHandler={toggleDarkMode} />
-      <CountryPage />
+      <Header clickHandler={toggleDarkMode} darkMode={darkMode} />
+      <Catalogue />
+      {/* <CountryPage /> */}
     </main>
   )
 }

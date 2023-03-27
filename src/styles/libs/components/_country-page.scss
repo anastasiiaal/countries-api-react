@@ -32,12 +32,8 @@
         }
 
         p.country__data {
-            font-size: 16px;
-            font-weight: 300;
             padding: 6px 0;
-            span {
-                font-weight: 600;
-            }
+            // all other .country__data css => _general.scss
         }
 
         .country__cols {

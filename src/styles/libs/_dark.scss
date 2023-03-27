@@ -21,4 +21,16 @@ main.dark {
         box-shadow: $shadow-plus;
     }
 
+    .countrycard {
+        background-color: $d-header;
+    }
+
+    .catalogue input.country-search {
+        background-color: $d-header;
+
+        &::placeholder {
+            color: $bg;
+        }
+    }
+
 } 

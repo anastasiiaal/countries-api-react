@@ -1,0 +1,46 @@
+.catalogue {
+    padding-bottom: 30px;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 47px 0;
+    }
+
+    .input-wrap {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 17px;
+            left: 28px;
+            height: 24px;
+            width: 24px;
+            background-image: url(../assets/search.svg);
+            pointer-events: none;
+        }
+    }
+
+    input.country-search {
+        width: 480px;
+        padding: 20px 70px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: 'Nunito Sans', sans-serif;
+        border: none;
+        box-shadow: $shadow;
+        border-radius: 3px;
+    }
+
+    .countrycards-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        // gap: 5%;
+    }
+
+    // .countrycard => _countrycard.scss
+}
