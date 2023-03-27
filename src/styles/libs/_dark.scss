@@ -16,4 +16,9 @@ main.dark {
         }
     } 
 
+    .country-page .country .country__borders .border-country {
+        background-color: $d-header;
+        box-shadow: $shadow-plus;
+    }
+
 } 

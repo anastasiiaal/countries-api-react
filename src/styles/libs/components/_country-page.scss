@@ -1,5 +1,5 @@
 .country-page {
-    padding: 80px 0;
+    padding: 70px 0;
 
     .btn-back {
         max-width: max-content;
@@ -8,5 +8,62 @@
         border-radius: 5px;
         cursor: pointer;
         background-color: $header;
+        margin-bottom: 70px;
+    }
+
+    .country {
+        display: flex;
+        gap: 120px;
+        align-items: center;
+
+        &__flag {
+            height: 400px;
+            width: auto;
+
+            & img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__name {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        p.country__data {
+            font-size: 16px;
+            font-weight: 300;
+            padding: 6px 0;
+            span {
+                font-weight: 600;
+            }
+        }
+
+        .country__cols {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 70px;
+            justify-content: space-between;
+        }
+
+        .country__borders {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .country__data {
+                margin-right: 25px;
+                margin-top: -10px;
+            }
+
+            .border-country {
+                box-shadow: $shadow;
+                padding: 8px 28px;
+                margin-right: 12px;
+                margin-bottom: 10px;
+                border-radius: 3px;
+            }
+        }
     }
 }
