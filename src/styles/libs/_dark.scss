@@ -25,12 +25,18 @@ main.dark {
         background-color: $d-header;
     }
 
-    .catalogue input.country-search {
-        background-color: $d-header;
+    .catalogue {
+        input.country-search {
+            background-color: $d-header;
 
-        &::placeholder {
-            color: $bg;
+            &::placeholder {
+                color: $bg;
+            }
         }
-    }
-
+        
+        .select, .select__options {
+            background-color: $d-header;
+            box-shadow: $shadow-plus;
+        }
+    } 
 } 

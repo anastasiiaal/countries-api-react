@@ -9,6 +9,10 @@
         cursor: pointer;
         background-color: $header;
         margin-bottom: 70px;
+
+        span {
+            margin-right: 5px;
+        }
     }
 
     .country {

@@ -15,7 +15,7 @@ export default function App() {
   return (
     <main className={darkMode ? "dark" : ""}>
       <Header clickHandler={toggleDarkMode} darkMode={darkMode} />
-      <Catalogue />
+      <Catalogue darkMode={darkMode} />
       {/* <CountryPage /> */}
     </main>
   )

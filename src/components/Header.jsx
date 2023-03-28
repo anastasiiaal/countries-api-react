@@ -3,7 +3,6 @@ import darkEmpty from "../assets/dark-empty.svg"
 import darkFull from "../assets/dark-full.svg"
 
 export default function Header(props) {
-    console.log(darkEmpty);
     return (
         <header className="header">
             <div className="container">

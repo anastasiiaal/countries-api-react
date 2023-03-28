@@ -1,7 +1,13 @@
 import React from "react";
 import CountryCard from "./CountryCard";
+import arrow from "../assets/arrow.svg"
+import dArrow from "../assets/d-arrow.svg"
 
-export default function Catalogue() {  
+export default function Catalogue(props) {  
+
+    function toggleSelect() {
+        document.getElementById("select__options").classList.toggle("hidden")
+    }
 
     return (
         <div className="catalogue">
@@ -14,19 +20,16 @@ export default function Catalogue() {
                             className="country-search" 
                         />
                     </div>
-                    <select
-                        id="region"
-                        value=""
-                        // onChange=""
-                        name="region"
-                    >
-                        <option value="">Filter By Region</option> 
-                        <option value="Africa">Africa</option>
-                        <option value="America">America</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
+                    <div className="select" onClick={toggleSelect} >
+                        Filter by Region <img className="select__arrow" src={props.darkMode ? dArrow : arrow} />
+                        <ul className="select__options hidden" id="select__options">
+                            <li className="select__option" value="Africa">Africa</li>
+                            <li className="select__option" value="America">America</li>
+                            <li className="select__option" value="Asia">Asia</li>
+                            <li className="select__option" value="Europe">Europe</li>
+                            <li className="select__option" value="Oceania">Oceania</li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="countrycards-wrapper">
                     <CountryCard />

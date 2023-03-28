@@ -5,7 +5,7 @@ export default function CountryPage (props) {
         <div className="country-page">
             <div className="container">
                 <div className="btn-back">
-                    &#129044; Back
+                    <span>&#129044;</span> Back
                 </div>
                 <div className="country">
                     <div className="country__flag">
