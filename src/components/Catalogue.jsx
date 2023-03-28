@@ -32,7 +32,9 @@ export default function Catalogue(props) {
                     </div>
                 </div>
                 <div className="countrycards-wrapper">
-                    <CountryCard />
+                    <CountryCard 
+                        visitThisCountryPage={props.visitThisCountryPage}
+                    />
                     <CountryCard />
                     <CountryCard />
                     <CountryCard />

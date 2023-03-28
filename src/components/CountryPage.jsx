@@ -4,7 +4,7 @@ export default function CountryPage (props) {
     return (
         <div className="country-page">
             <div className="container">
-                <div className="btn-back">
+                <div className="btn-back" onClick={props.backToCatalogue}>
                     <span>&#129044;</span> Back
                 </div>
                 <div className="country">

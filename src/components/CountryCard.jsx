@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function CountryCard() {
+export default function CountryCard(props) {
     return (
-        <div className="countrycard">
+        <div className="countrycard" onClick={props.visitThisCountryPage}>
             <img src="./src/assets/flag.png" alt="*Country name* flag" />
             <div className="countrycard__info">
                 <h2>Belgium</h2>

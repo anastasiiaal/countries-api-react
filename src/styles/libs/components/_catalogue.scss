@@ -32,6 +32,10 @@
         border: none;
         box-shadow: $shadow;
         border-radius: 3px;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     .select {
