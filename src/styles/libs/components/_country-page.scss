@@ -26,12 +26,13 @@
         align-items: center;
 
         &__flag {
-            height: 400px;
-            width: auto;
+            height: auto;
+            max-width: 600px;
 
             & img {
                 height: 100%;
                 width: 100%;
+                box-shadow: $shadow;
             }
         }
 

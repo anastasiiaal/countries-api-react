@@ -2,18 +2,18 @@ import React from "react";
 
 export default function CountryCard(props) {
     return (
-        <div className="countrycard" onClick={props.visitThisCountryPage}>
-            <img src="./src/assets/flag.png" alt="*Country name* flag" />
+        <div className="countrycard" onClick={() => props.visitThisCountryPage(props.id)}>
+            <img src={props.flag} alt={`Flag of ${props.name}`} />
             <div className="countrycard__info">
-                <h2>Belgium</h2>
+                <h2>{props.name}</h2>
                 <p className="country__data">
-                    <span>Population:</span> 11,319,511
+                    <span>Population:</span> {props.population.toLocaleString('en')}
                 </p>
                 <p className="country__data">
-                    <span>Region:</span> Europe
+                    <span>Region:</span> {props.region}
                 </p>
                 <p className="country__data">
-                    <span>Capital:</span> Brussels
+                    <span>Capital:</span> {props.capital}
                 </p>
             </div>
         </div>
