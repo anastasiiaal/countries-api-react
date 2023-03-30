@@ -5,16 +5,25 @@ import dArrow from "../assets/d-arrow.svg"
 
 export default function Catalogue(props) {  
 
+    // func that toggles style of the select menu
     function toggleSelect() {
         document.getElementById("select__options").classList.toggle("hidden")
     }
 
+    const [searchValue, setSearchValue] = React.useState("")
+
+    function handleSearch() {
+        setSearchValue(event.target.value)
+    }
+    console.log(searchValue);
+
+    // var containing all the country cards to be displayed in the catalogue
     const countryCards = props.countryData.map(country => {
         return (
             <CountryCard 
                 visitThisCountryPage={props.visitThisCountryPage}
                 key={country.cca2}
-                flag={country.flags.png}
+                flag={country.flags.svg}
                 id={country.cca2}
                 name={country.name.common} 
                 population={country.population}
@@ -33,6 +42,8 @@ export default function Catalogue(props) {
                             type="text" 
                             placeholder="Search for a country..." 
                             className="country-search" 
+                            onChange={handleSearch}
+                            value={searchValue}
                         />
                     </div>
                     <div className="select" onClick={toggleSelect} >

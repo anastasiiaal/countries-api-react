@@ -4,6 +4,8 @@ export default function CountryPage(props) {
 
     const [thisCountry, setThisCountry] = React.useState({})
 
+    // on the component buildup, do an API call to get the data of a concrete country
+    // will probably rewrite that piece of code...
     React.useEffect(() => {
         fetch(`https://restcountries.com/v3.1/alpha/${props.id}`)
             .then(res => res.json())
