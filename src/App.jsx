@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Catalogue from './components/Catalogue'
@@ -16,47 +17,29 @@ export default function App() {
 
     // state holding the dark mode setup
     const [darkMode, setDarkMode] = useState(false)
-    // state deciding which component should be displayed (catalogue || country page)
-    const [catalogue, setCatalogue] = useState(true)
-    // if country page is displayed, this country's id is in state
-    const [thisCountryId, setThiscountryId] = useState('')
 
     function toggleDarkMode() {
         setDarkMode(prevMode => prevMode = !prevMode)
     }
 
-    // func to display the catalogue when returning from the country page
-    function backToCatalogue() {
-        setCatalogue(true)
-        setThiscountryId('');
-    }
-
-    // func to display the selected country's page
-    function visitThisCountryPage(id) {
-        setCatalogue(false)
-        setThiscountryId(id);
-    }
-
     return (
-        <main className={darkMode ? "dark" : ""}>
-            <Header
-                clickHandler={toggleDarkMode}
-                darkMode={darkMode}
-            />
-            {
-                catalogue
-                ?
-                <Catalogue
+        <BrowserRouter>
+            <main className={darkMode ? "dark" : ""}>
+                <Header
+                    clickHandler={toggleDarkMode}
                     darkMode={darkMode}
-                    visitThisCountryPage={visitThisCountryPage}
-                    countryData={countryData}
                 />
-                :
-                <CountryPage
-                    backToCatalogue={backToCatalogue}
-                    id={thisCountryId}
-                />
-            }
-        </main>
+                <Routes>
+                    <Route path="/" element={
+                        <Catalogue 
+                            darkMode={darkMode} 
+                            countryData={countryData}
+                        />
+                    } />
+                    <Route path="/:cca2" element={<CountryPage />} />
+                </Routes>
+            </main>
+        </BrowserRouter>
     )
 }
+

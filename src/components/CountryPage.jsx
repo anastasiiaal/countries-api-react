@@ -1,16 +1,18 @@
 import React from "react";
+import { useParams, Link } from "react-router-dom"
 
-export default function CountryPage(props) {
+export default function CountryPage() {
 
-    const [thisCountry, setThisCountry] = React.useState({})
+    const [thisCountry, setThisCountry] = React.useState([])
+    const { cca2 } = useParams()
 
     // on the component buildup, do an API call to get the data of a concrete country
     // will probably rewrite that piece of code...
     React.useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/alpha/${props.id}`)
+        fetch(`https://restcountries.com/v3.1/alpha/${cca2}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                console.log(data[0]);
                 setThisCountry(
                     {
                         "flag": data[0].flags.svg,
@@ -20,20 +22,38 @@ export default function CountryPage(props) {
                         "region": data[0].region,
                         "subregion": data[0].subregion,
                         "capital": data[0].capital.join(", "),
-                        "languages": Object.values(data[0].languages).join(", "),
                         "tld": data[0].tld,
+                        "currencies": Object.values(data[0].currencies)[0].name,
+                        "languages": Object.values(data[0].languages).join(", "),
                         "borders": data[0].borders
                     }
                 )
             })
-    }, [])
+    }, [cca2])
+
+    let borderElements = thisCountry.borders;
+    let borderElementsToShow;
+
+    if (borderElements === undefined) {
+        borderElementsToShow = (<p className="country__data">-</p>)
+    } else {
+        borderElementsToShow = borderElements.map(country => {
+            return (
+                <Link to={`/${country}`}>
+                    <div key={country} className="border-country">{country}</div>
+                </Link>
+            )
+        })
+    }
 
     return (
         <div className="country-page">
             <div className="container">
-                <div className="btn-back" onClick={props.backToCatalogue}>
-                    <span>&#129044;</span> Back
-                </div>
+                <Link to={"/"}>
+                    <div className="btn-back">
+                        <span>&#129044;</span> Back
+                    </div>
+                </Link>
                 <div className="country">
                     <div className="country__flag">
                         <img src={thisCountry.flag} alt="*Country name* flag" />
@@ -63,7 +83,7 @@ export default function CountryPage(props) {
                                     <span>Top Level Domain:</span> {thisCountry.tld}
                                 </p>
                                 <p className="country__data">
-                                    <span>Currencies:</span> Euro
+                                    <span>Currencies:</span> {thisCountry.currencies}
                                 </p>
                                 <p className="country__data">
                                     <span>Languages:</span> {thisCountry.languages}
@@ -74,7 +94,7 @@ export default function CountryPage(props) {
                             <p className="country__data">
                                 <span>Border Countries:</span>
                             </p>
-                            <div className="border-country">*some border country*</div>
+                            {borderElementsToShow}
                         </div>
                     </div>
                 </div>

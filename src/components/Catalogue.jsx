@@ -21,7 +21,6 @@ export default function Catalogue(props) {
     const countryCards = props.countryData.map(country => {
         return (
             <CountryCard 
-                visitThisCountryPage={props.visitThisCountryPage}
                 key={country.cca2}
                 flag={country.flags.svg}
                 id={country.cca2}
@@ -59,16 +58,6 @@ export default function Catalogue(props) {
                 </div>
                 <div className="countrycards-wrapper">
                     {countryCards}
-                    {/* <CountryCard 
-                        visitThisCountryPage={props.visitThisCountryPage}
-                    />
-                    <CountryCard />
-                    <CountryCard />
-                    <CountryCard />
-                    <CountryCard />
-                    <CountryCard />
-                    <CountryCard />
-                    <CountryCard /> */}
                 </div>
             </div>
         </div>
