@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Header from './components/Header'
+import Layout from './components/Layout'
 import Catalogue from './components/Catalogue'
 import CountryPage from './components/CountryPage'
 
@@ -23,23 +23,32 @@ export default function App() {
     }
 
     return (
-        <BrowserRouter>
-            <main className={darkMode ? "dark" : ""}>
-                <Header
-                    clickHandler={toggleDarkMode}
-                    darkMode={darkMode}
-                />
+        <main className={darkMode ? "dark" : ""}>
+            <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={
-                        <Catalogue 
+                    <Route element={
+                        <Layout 
+                            toggleDarkMode={toggleDarkMode}
                             darkMode={darkMode} 
-                            countryData={countryData}
                         />
-                    } />
-                    <Route path="/:cca2" element={<CountryPage />} />
+                    }>
+                        <Route
+                            path="/"
+                            element={
+                                <Catalogue
+                                    darkMode={darkMode}
+                                    countryData={countryData}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/:cca2"
+                            element={<CountryPage />}
+                        />
+                    </Route>
                 </Routes>
-            </main>
-        </BrowserRouter>
+            </BrowserRouter>
+        </main>
     )
 }
 

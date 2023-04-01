@@ -69,6 +69,11 @@
                 margin-right: 12px;
                 margin-bottom: 10px;
                 border-radius: 3px;
+
+                &:hover {
+                    box-shadow: $shadow-plus;
+                    transition: all .2s ease-in-out;
+                }
             }
         }
     }
