@@ -28,6 +28,7 @@
         &__flag {
             height: auto;
             max-width: 600px;
+            min-width: 600px;
 
             & img {
                 height: 100%;
@@ -48,9 +49,12 @@
 
         .country__cols {
             display: flex;
-            gap: 60px;
             margin-bottom: 70px;
             justify-content: space-between;
+        }
+
+        .country__col {
+            width: 45%;
         }
 
         .country__borders {

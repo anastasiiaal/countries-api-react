@@ -1,7 +1,7 @@
 /*  media queries */
 
 /*1440-1300*/
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1350px) {
     .container {
         width: 90%;
     }
@@ -9,6 +9,7 @@
     .country-page {
         .country__flag {
             max-width: 500px;
+            min-width: 500px;
         }
 
         .country {
