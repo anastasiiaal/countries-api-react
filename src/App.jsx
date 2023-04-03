@@ -15,6 +15,10 @@ export default function App() {
             .then(data => setCountryData(data))
     }, [])
 
+    React.useEffect(() => {
+        localStorage.setItem("countries", JSON.stringify(countryData))
+    }, [countryData])
+
     // state holding the dark mode setup
     const [darkMode, setDarkMode] = useState(false)
 
@@ -23,32 +27,30 @@ export default function App() {
     }
 
     return (
-        <main className={darkMode ? "dark" : ""}>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={
-                        <Layout 
-                            toggleDarkMode={toggleDarkMode}
-                            darkMode={darkMode} 
-                        />
-                    }>
-                        <Route
-                            path="/"
-                            element={
-                                <Catalogue
-                                    darkMode={darkMode}
-                                    countryData={countryData}
-                                />
-                            }
-                        />
-                        <Route
-                            path="/:cca2"
-                            element={<CountryPage />}
-                        />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </main>
+        <BrowserRouter>
+            <Routes>
+                <Route element={
+                    <Layout 
+                        toggleDarkMode={toggleDarkMode}
+                        darkMode={darkMode} 
+                    />
+                }>
+                    <Route
+                        path="/"
+                        element={
+                            <Catalogue
+                                darkMode={darkMode}
+                                countryData={countryData}
+                            />
+                        }
+                    />
+                    <Route
+                        path="/:cca3"
+                        element={<CountryPage />}
+                    />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 

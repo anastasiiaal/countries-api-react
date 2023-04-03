@@ -4,15 +4,16 @@ import { useParams, Link } from "react-router-dom"
 export default function CountryPage() {
 
     const [thisCountry, setThisCountry] = React.useState([])
-    const { cca2 } = useParams()
+    const { cca3 } = useParams()
+
+    // getting all countries from lS (to avoid multiple fetching) | is used later
+    const countries = JSON.parse(localStorage.getItem("countries"))
 
     // on the component buildup, do an API call to get the data of a concrete country
-    // will probably rewrite that piece of code...
     React.useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/alpha/${cca2}`)
+        fetch(`https://restcountries.com/v3.1/alpha/${cca3}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data[0]);
                 setThisCountry(
                     {
                         "flag": data[0].flags.svg,
@@ -29,18 +30,29 @@ export default function CountryPage() {
                     }
                 )
             })
-    }, [cca2])
+    }, [cca3])
 
-    let borderElements = thisCountry.borders;
+    let borderElements = thisCountry.borders;    // get the fetched borders data to check if empty or not
     let borderElementsToShow;
+    let arrayOfBorderCountries = []
 
-    if (borderElements === undefined) {
-        borderElementsToShow = (<p className="country__data">-</p>)
-    } else {
-        borderElementsToShow = borderElements.map(country => {
+    if (borderElements === undefined) {          // if no border el-s found, render a `—`
+        borderElementsToShow = (<p className="country__data"> — </p>)
+    } else {                                     // else push their cca3 and theit names in arrayOfBorderCountries[]
+        countries.map(country => {
+            if (borderElements.includes(country.cca3)) {
+                arrayOfBorderCountries.push([
+                    country.cca3,
+                    country.name.common
+                ])
+            }
+        })
+    
+        // out of arrayOfBorderCountries[], render div el-s with cca3 & name
+        borderElementsToShow = arrayOfBorderCountries.map(country => {
             return (
-                <Link to={`/${country}`}>
-                    <div key={country} className="border-country">{country}</div>
+                <Link to={`/${country[0]}`} key={country[0]}>
+                    <div key={country[0]} className="border-country">{country[1]}</div>
                 </Link>
             )
         })
@@ -56,7 +68,7 @@ export default function CountryPage() {
                 </Link>
                 <div className="country">
                     <div className="country__flag">
-                        <img src={thisCountry.flag} alt="*Country name* flag" />
+                        <img src={thisCountry.flag} alt={`Flag of ${thisCountry.name}`} />
                     </div>
                     <div className="country__info">
                         <h1 className="country__name">{thisCountry.name}</h1>

@@ -15,15 +15,15 @@ export default function Catalogue(props) {
     function handleSearch() {
         setSearchValue(event.target.value)
     }
-    console.log(searchValue);
+    // console.log(searchValue);
 
     // var containing all the country cards to be displayed in the catalogue
     const countryCards = props.countryData.map(country => {
         return (
             <CountryCard 
-                key={country.cca2}
+                key={country.cca3}
                 flag={country.flags.svg}
-                id={country.cca2}
+                id={country.cca3}
                 name={country.name.common} 
                 population={country.population}
                 region={country.region}
