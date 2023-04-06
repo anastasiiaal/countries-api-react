@@ -1,7 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom"
+import back from "../assets/back.svg"
+import dBack from "../assets/d-back.svg"
 
-export default function CountryPage() {
+export default function CountryPage(props) {
 
     const [thisCountry, setThisCountry] = React.useState([])
     const { cca3 } = useParams()
@@ -63,7 +65,7 @@ export default function CountryPage() {
             <div className="container">
                 <Link to={"/"}>
                     <div className="btn-back">
-                        <span>&#129044;</span> Back
+                        <img src={props.darkMode ? dBack : back} alt="Back" /> Back
                     </div>
                 </Link>
                 {thisCountry.length == 0 ? <h2>Loading...</h2> :

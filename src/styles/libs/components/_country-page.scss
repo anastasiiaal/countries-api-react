@@ -9,9 +9,11 @@
         cursor: pointer;
         background-color: $header;
         margin-bottom: 70px;
+        display: flex;
+        align-items: center;
 
-        span {
-            margin-right: 5px;
+        img {
+            margin-right: 10px;
         }
 
         &:hover {

@@ -46,7 +46,7 @@ export default function App() {
                     />
                     <Route
                         path="/:cca3"
-                        element={<CountryPage />}
+                        element={<CountryPage darkMode={darkMode} />}
                     />
                 </Route>
             </Routes>

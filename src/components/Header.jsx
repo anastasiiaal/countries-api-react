@@ -10,7 +10,7 @@ export default function Header(props) {
                 <Link className="logo" to={"/"}>Where in the world?</Link>
                 <div className="darkmode-toggler" onClick={props.clickHandler}>
                     <img src={props.darkMode ? darkFull : darkEmpty} alt="Dark mode image" />
-                    <p>Dark Mode</p>
+                    <p>{props.darkMode ? "Light" : "Dark"} Mode</p>
                 </div>
             </div>
         </header>
