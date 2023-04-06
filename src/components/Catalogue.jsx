@@ -90,11 +90,11 @@ export default function Catalogue(props) {
                         <div className="select" id="select" onClick={toggleSelect} >
                             <p> Filter by Region</p> <img className="select__arrow" src={props.darkMode ? dArrow : arrow} alt="Select arrow" />
                             <ul className="select__options hidden" id="select__options">
-                                <li onClick={() => filterRegion("Africa")} className="select__option" value="Africa">Africa</li>
-                                <li onClick={() => filterRegion("America")} className="select__option" value="America">America</li>
-                                <li onClick={() => filterRegion("Asia")} className="select__option" value="Asia">Asia</li>
-                                <li onClick={() => filterRegion("Europe")} className="select__option" value="Europe">Europe</li>
-                                <li onClick={() => filterRegion("Oceania")} className="select__option" value="Oceania">Oceania</li>
+                                <li onClick={() => filterRegion("Africa")} className="select__option">Africa</li>
+                                <li onClick={() => filterRegion("America")} className="select__option">America</li>
+                                <li onClick={() => filterRegion("Asia")} className="select__option">Asia</li>
+                                <li onClick={() => filterRegion("Europe")} className="select__option">Europe</li>
+                                <li onClick={() => filterRegion("Oceania")} className="select__option">Oceania</li>
                             </ul>
                         </div>
                         <img id="remove-filter" src={props.darkMode ? dClose : close} alt="Remove filters" onClick={removeFilters} />
