@@ -116,11 +116,9 @@
     .countrycard {
         width: 80%;
     }
-}
 
-/* < 320*/
-// @media screen and (max-width: 319px) {
-//     .container {
-//         width: 90%;
-//     }
-// }
+    .country-page .country .country__flag {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}

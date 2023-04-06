@@ -38,10 +38,24 @@
         }
     }
 
+    .select-wrapper {
+        display: flex;
+        align-items: center;
+
+        &> img {
+            margin-left: 10px;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+        }
+    }
+
     .select {
         position: relative;
         background-color: $header;
         padding: 20px 55px 20px 25px;
+        width: 178px;
+        box-sizing: border-box;
         font-size: 14px;
         box-shadow: $shadow;
         border-radius: 3px;
@@ -79,6 +93,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        gap: 20px;
     }
 
     // .countrycard => _countrycard.scss
