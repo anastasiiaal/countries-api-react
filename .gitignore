@@ -41,5 +41,4 @@ dist-ssr
 
 # get rid of compiled css & dart-sass
 dart-sass
-*.css
 *.css.map
