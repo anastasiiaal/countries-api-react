@@ -1,4 +1,4 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# 🌍 REST Countries API with color theme switcher solution
 
 This is my solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). 
 
@@ -11,7 +11,8 @@ This is my solution to the [REST Countries API with color theme switcher challen
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-<!-- - [Author](#author) -->
+- [Author](#author)
+- [Thanks](#thanxx-for-your-visit)
 
 
 ## Overview
@@ -36,8 +37,7 @@ Here is the screenshot of my solution:
 
 ### Links
 
-- Live Site URL: [Coming soon..](https://)
-- Solution URL: [Will upload as soon as finished](https://)
+- Live Site URL: [Click here to browse for countries](https://shimmering-elf-4335fd.netlify.app/)
 
 ## My process
 
@@ -57,12 +57,14 @@ The main goal of taking this challenge was to improve my React.js knowledge, inc
 
 Goal number two was to get more confident using APIs. Happy to say, this one has been accomplished, too.
 
-<!--
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername) 
+- Website - [My portfolio site](https://www.anastasiia.pro/)
+- Git Hub - [Here you are](https://github.com/anastasiiaal)
 
--->
+## Thanxx for your visit!
+
+p.s. If you have any suggestion on improving this code, you're more than welcome to share your ideas!
+
+Leave your comments below the commit of your choice or pull a request! ✨

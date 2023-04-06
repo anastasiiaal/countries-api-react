@@ -9,7 +9,7 @@ export default function Header(props) {
             <div className="container">
                 <Link className="logo" to={"/"}>Where in the world?</Link>
                 <div className="darkmode-toggler" onClick={props.clickHandler}>
-                    <img src={props.darkMode ? darkFull : darkEmpty} alt="" />
+                    <img src={props.darkMode ? darkFull : darkEmpty} alt="Dark mode image" />
                     <p>Dark Mode</p>
                 </div>
             </div>

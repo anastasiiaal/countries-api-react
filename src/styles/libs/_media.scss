@@ -109,10 +109,15 @@
 
 /*700-600*/
 @media screen and (max-width: 600px) {
+    .catalogue .nav {
+        gap: 22px;
+    }
+
     .countrycards-wrapper {
         flex-direction: column;
         align-items: center;
     }
+
     .countrycard {
         width: 80%;
     }

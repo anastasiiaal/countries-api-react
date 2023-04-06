@@ -88,7 +88,7 @@ export default function Catalogue(props) {
                     </div>
                     <div className="select-wrapper">
                         <div className="select" id="select" onClick={toggleSelect} >
-                            <p> Filter by Region</p> <img className="select__arrow" src={props.darkMode ? dArrow : arrow} />
+                            <p> Filter by Region</p> <img className="select__arrow" src={props.darkMode ? dArrow : arrow} alt="Select arrow" />
                             <ul className="select__options hidden" id="select__options">
                                 <li onClick={() => filterRegion("Africa")} className="select__option" value="Africa">Africa</li>
                                 <li onClick={() => filterRegion("America")} className="select__option" value="America">America</li>
