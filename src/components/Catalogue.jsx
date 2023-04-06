@@ -51,8 +51,13 @@ export default function Catalogue(props) {
     // var that will contain all the country cards to be displayed in the catalogue
     let countryCards;
     let dataToShow;
+    // checks if no country is found in search
+    let notFound = false;
     
     if (!countriesToShow.length) {
+        if(searchValue !== "") {
+            notFound = true
+        }
         dataToShow = props.countryData
     } else {
         dataToShow = countriesToShow
@@ -71,7 +76,6 @@ export default function Catalogue(props) {
             />
         )
     })
-
 
     return (
         <div className="catalogue">
@@ -101,7 +105,7 @@ export default function Catalogue(props) {
                     </div>
                 </div>
                 <div className="countrycards-wrapper">
-                    {countryCards}
+                    {notFound ? <h2>No countries found</h2> : countryCards}
                 </div>
             </div>
         </div>

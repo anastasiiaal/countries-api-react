@@ -83,6 +83,10 @@
                 gap: 40px;
                 margin-bottom: 40px;
             }
+
+            .country__col {
+                width: 100%;
+            }
         }
     }
 
@@ -122,8 +126,10 @@
         width: 80%;
     }
 
-    .country-page .country .country__flag {
-        max-width: 100%;
-        min-width: 100%;
-    }
+    .country-page .country {
+        .country__flag {
+            max-width: 100%;
+            min-width: 100%;
+        }
+    } 
 }
