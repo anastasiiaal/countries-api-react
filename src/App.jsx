@@ -22,8 +22,17 @@ export default function App() {
     // state holding the dark mode setup
     const [darkMode, setDarkMode] = useState(false)
 
+    React.useEffect(() => {
+        const darkModeValue = JSON.parse(localStorage.getItem("darkMode"))
+        if (darkModeValue !== null) {
+            setDarkMode(darkModeValue)
+        }
+    }, [])
+
     function toggleDarkMode() {
-        setDarkMode(prevMode => prevMode = !prevMode)
+        const newMode = !darkMode
+        setDarkMode(newMode)
+        localStorage.setItem("darkMode", JSON.stringify(newMode))
     }
 
     return (

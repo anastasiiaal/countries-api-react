@@ -20,14 +20,14 @@ export default function CountryPage(props) {
                     {
                         "flag": data[0].flags.svg,
                         "name": data[0].name.common,
-                        "nativeName": Object.values(Object.values(data[0].name.nativeName))[0].common,
+                        "nativeName": data[0].name.nativeName ? Object.values(Object.values(data[0].name.nativeName))[0].common : "—",
                         "population": data[0].population.toLocaleString('en'),
                         "region": data[0].region,
-                        "subregion": data[0].subregion,
-                        "capital": data[0].capital.join(", "),
+                        "subregion": data[0].subregion ? data[0].subregion : "—",
+                        "capital": data[0].capital ? data[0].capital.join(", ") : "—",
                         "tld": data[0].tld,
-                        "currencies": Object.values(data[0].currencies)[0].name,
-                        "languages": Object.values(data[0].languages).join(", "),
+                        "currencies": data[0].currencies ? Object.values(data[0].currencies)[0].name : "—",
+                        "languages": data[0].languages ? Object.values(data[0].languages).join(", ") : "—",
                         "borders": data[0].borders
                     }
                 )
