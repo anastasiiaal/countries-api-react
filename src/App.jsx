@@ -38,14 +38,14 @@ export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={
+                <Route path="/" element={
                     <Layout 
                         toggleDarkMode={toggleDarkMode}
                         darkMode={darkMode} 
                     />
                 }>
                     <Route
-                        path="/"
+                        index
                         element={
                             <Catalogue
                                 darkMode={darkMode}
@@ -54,7 +54,7 @@ export default function App() {
                         }
                     />
                     <Route
-                        path="/:cca3"
+                        path=":cca3"
                         element={<CountryPage darkMode={darkMode} />}
                     />
                 </Route>
