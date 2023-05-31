@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { 
+    createBrowserRouter, 
+    createRoutesFromElements, 
+    Route, 
+    RouterProvider 
+} from 'react-router-dom'
 
 import Layout from './components/Layout'
-import Catalogue from './components/Catalogue'
-import CountryPage from './components/CountryPage'
+import Catalogue, {loader as catalogueLoader}  from './pages/Catalogue'
+import CountryPage from './pages/CountryPage'
+import Error from './components/Error'
 
 export default function App() {
     // state holding all countries from the API
@@ -35,31 +41,33 @@ export default function App() {
         localStorage.setItem("darkMode", JSON.stringify(newMode))
     }
 
+    const router = createBrowserRouter(createRoutesFromElements(
+        <Route path="/" element={
+            <Layout 
+                toggleDarkMode={toggleDarkMode}
+                darkMode={darkMode} 
+            />
+        }>
+            <Route
+                index
+                element={
+                    <Catalogue
+                        darkMode={darkMode}
+                        countryData={countryData}
+                        loader={catalogueLoader}
+                        errorElement={<Error />}
+                    />
+                }
+            />
+            <Route
+                path=":cca3"
+                element={<CountryPage darkMode={darkMode} />}
+            />
+        </Route>
+    ))
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={
-                    <Layout 
-                        toggleDarkMode={toggleDarkMode}
-                        darkMode={darkMode} 
-                    />
-                }>
-                    <Route
-                        index
-                        element={
-                            <Catalogue
-                                darkMode={darkMode}
-                                countryData={countryData}
-                            />
-                        }
-                    />
-                    <Route
-                        path=":cca3"
-                        element={<CountryPage darkMode={darkMode} />}
-                    />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router} />
     )
 }
 

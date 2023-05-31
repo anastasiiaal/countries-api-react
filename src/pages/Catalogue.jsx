@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
-import CountryCard from "./CountryCard";
+import { useLoaderData } from "react-router-dom";
+import CountryCard from "../components/CountryCard";
 import arrow from "../assets/arrow.svg"
 import dArrow from "../assets/d-arrow.svg"
 import close from "../assets/close.svg"
 import dClose from "../assets/d-close.svg"
 
+import { getAllCountriesData } from "../fetchAll"
+
+export function loader () {
+    return getAllCountriesData()
+}
+
 export default function Catalogue(props) {
+    // got to improve this functionality
+    const allCountries = useLoaderData()
+
     // state keeping data of countries to show
     const [countriesToShow, setCountriesToShow] = useState(props.countryData)
     // state keeping your search request
