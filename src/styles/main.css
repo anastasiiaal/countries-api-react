@@ -323,6 +323,13 @@ header .darkmode-toggler p {
   margin-bottom: 15px;
 }
 
+.error-container {
+  margin-top: 40px;
+}
+.error-container h2 {
+  margin-bottom: 15px;
+}
+
 /*  media queries */
 /*1440-1300*/
 @media screen and (max-width: 1350px) {

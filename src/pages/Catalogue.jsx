@@ -6,7 +6,7 @@ import dArrow from "../assets/d-arrow.svg"
 import close from "../assets/close.svg"
 import dClose from "../assets/d-close.svg"
 
-import { getAllCountriesData } from "../fetchAll"
+import { getAllCountriesData } from "../api"
 
 export function loader () {
     return getAllCountriesData()

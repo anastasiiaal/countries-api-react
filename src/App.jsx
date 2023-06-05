@@ -8,8 +8,8 @@ import {
 
 import Layout from './components/Layout'
 import Catalogue, {loader as catalogueLoader}  from './pages/Catalogue'
-import CountryPage from './pages/CountryPage'
-import Error from './components/Error'
+import CountryPage, { loader as countryPageLoader } from './pages/CountryPage'
+import Error from './pages/Error'
 
 export default function App() {
     // state holding all countries from the API
@@ -62,6 +62,8 @@ export default function App() {
             <Route
                 path=":cca3"
                 element={<CountryPage darkMode={darkMode} />}
+                loader={countryPageLoader}
+                errorElement={<Error />}
             />
         </Route>
     ))
